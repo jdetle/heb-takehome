@@ -15,7 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "components/*": ["./src/*"]
+      "components/*": ["./src/components/*"],
+      "global-constants": ["./src/global-constants.ts"],
+      "styles/*": ["./src/styles/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
