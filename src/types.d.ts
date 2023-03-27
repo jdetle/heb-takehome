@@ -3,8 +3,10 @@ declare type FormErrors<T> = {
 }
 
 declare type AccountData = {
+    id: string
+    pin: string
     balance: number
-    withdrawalHistory: Array<{ amount: number, withdrawnAt: string }>
+    withdrawalHistory: Array<{ amount: number, withdrawnAt: number }>
 }
 declare type ContextualAccountData = {
     loading: boolean
@@ -13,9 +15,9 @@ declare type ContextualAccountData = {
     accountIds: string[]
 }
 declare type InputProps = {
+    required: boolean
     label: string
     id: string
     name: string
-    onChange: () => void
-    onBlur: () => void
+    type: React.HTMLInputTypeAttribute
 }

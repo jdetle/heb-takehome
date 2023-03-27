@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from 'styles/AccountCreation.module.css'
-import AccountCreationForm from 'components/forms/creation-form'
+import styles from 'styles/account-creation.module.css'
+import AccountCreationForm from 'components/forms/create'
+import Card from '@mui/material/Card'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,12 +17,6 @@ export default function AccountCreation() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-        </div>
-
-        <div className={styles.center}>
-        </div>
-
         <div className={styles.grid}>
           <AccountCreationForm onSuccess={() => { }} onFailure={() => { }} />
         </div>

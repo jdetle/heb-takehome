@@ -1,1 +1,2 @@
-export const ACCOUNT_LOCAL_STORAGE = 'account'
+export const ACCOUNTS_LOCAL_STORAGE = 'accounts'
+export const WITHDRAWAL_LIMIT = 1000

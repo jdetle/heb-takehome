@@ -1,0 +1,31 @@
+.main {
+    padding: 6rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    gap: 10px;
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .grid {
+    max-width: 100%;
+    grid-area: 1/2/1/4;
+    justify-content: center;
+  }
+  
+  .card {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    grid-template-rows: repeat(2, minmax(25%, auto)); 
+  }
+
+  .cardHeader {
+    grid-area: 1/1/1/4;
+  }
+  
+  .cardActions {
+    grid-area: 2/4/2/4;
+  }
+  
+ 

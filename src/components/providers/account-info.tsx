@@ -1,5 +1,10 @@
 import { useState, useEffect, createContext } from 'react';
-import { ACCOUNT_LOCAL_STORAGE } from 'global-constants'
+import { ACCOUNTS_LOCAL_STORAGE } from 'global-constants'
+
+export function validateAccountData(data: any): data is AccountData {
+    let _data = data as AccountData;
+    return Boolean(_data.balance && _data.withdrawalHistory && _data.id && data.pin)
+}
 
 type AccountContextProviderProps = {
     accountId: string
@@ -13,19 +18,14 @@ export const AccountContext = createContext<ContextualAccountData>({
     accountIds: []
 });
 
-const useAccountData = (accountId: string) => {
+export const useAccountData = (accountId: string) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<Error | null>(null);
     const [accountData, setAccountData] = useState<AccountData | null>(null);
     const [accountIds, setAccountIds] = useState<string[]>([])
     useEffect(() => {
         setLoading(true)
-        // Check that the data actually satisfies the type
-        function validateAccountData(data: any): data is AccountData {
-            let _data = data as AccountData;
-            return Boolean(_data.balance && _data.withdrawalHistory)
-        }
-        const accounts = JSON.parse(localStorage.getItem(ACCOUNT_LOCAL_STORAGE) || '{}');
+        const accounts = JSON.parse(localStorage.getItem(ACCOUNTS_LOCAL_STORAGE) || '{}');
         const account = accounts[accountId] || {}
         if (validateAccountData(account)) {
             setAccountData(account)
