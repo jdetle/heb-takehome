@@ -64,15 +64,38 @@ should offer the following features:
  A daily withdrawal limit
 
 #### Submit the following
- Provide complete steps to compile and run your project.
- The full source of your solution in a Github, Bitbucket or Gitlab repo.
- During your technical interview, we will:
-o Ask you to describe your design and implementation decisions.
-o Ask you to talk about testing scenarios and considerations for real-world
+Provide complete steps to compile and run your project.
+The full source of your solution in a Github, Bitbucket or Gitlab repo.
+During your technical interview, we will:
+    - Ask you to describe your design and implementation decisions.
+    - Ask you to talk about testing scenarios and considerations for real-world
 deployment.
-o Ask you about the next set of features that you would want to implement or any
+    - Ask you about the next set of features that you would want to implement or any
 improvements on your current implementation.
 
- For ease of sharing we recommend using codesandbox.io, but it’s not required.
 
 Please let me know if you have any questions.
+
+
+### Guidelines to running the app
+The UI here obviously needs work, and there is no actual call being made to an API. Form submissions save data to local storage.
+
+(I found this humorous, and accurate, from Github Copilot): 
+> "I would have liked to have spent more time on the UI, but I was running out of time. I would have added tests, but I was running out of time.
+
+- Steps to run:
+    0. Install and use node 18.15.0, I do this with fnm https://github.com/Schniz/fnm
+    1. `git clone https://github.com/jdetle/heb-takehome.git`
+    2. `npm i`
+    3. `npm run dev`
+    4. Navigate to `localhost:3000` in your browser
+    5. Create an account
+    6. Use account credentials to log in
+
+### Tech used:
+- Formik
+- mui
+- Next.js
+- React
+- Typescript
+- Yup
